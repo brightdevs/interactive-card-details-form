@@ -59,6 +59,58 @@
   font-family: 'Space Grotesk', sans-serif;
   height: 100vh;
   display: flex; }
+  .icd__wrapper .cc-front,
+  .icd__wrapper .cc-back {
+    position: absolute;
+    z-index: 5;
+    width: 400px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;
+    color: white;
+    border-radius: 10px;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column; }
+  .icd__wrapper .cc-front {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    background-image: url("./images/bg-card-front.png"); }
+    .icd__wrapper .cc-front__wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start; }
+      .icd__wrapper .cc-front__wrapper__img {
+        width: 80px; }
+      .icd__wrapper .cc-front__wrapper__number {
+        font-size: 22px; }
+      .icd__wrapper .cc-front__wrapper__footer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-size: 12px; }
+        .icd__wrapper .cc-front__wrapper__footer__name {
+          text-transform: uppercase; }
+  .icd__wrapper .cc-back {
+    position: absolute;
+    left: 16%;
+    top: 55%;
+    background-image: url("./images//bg-card-back.png"); }
+    .icd__wrapper .cc-back__wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end; }
+      .icd__wrapper .cc-back__wrapper__cvc {
+        margin: 16px 20px 0 0;
+        font-size: 12px; }
   .icd__wrapper__section-empty {
     width: calc(100% / 3);
     background-image: url("./images/bg-main-desktop.png");
