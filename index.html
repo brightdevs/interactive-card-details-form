@@ -52,7 +52,7 @@
           <div class="label-wrapper mt-20">
             <label for="card-number">CARD NUMBER </label>
             <input class="w-100 card-holder-number" type="text" id="card-holder-number" name="cardNumber"
-              placeholder="0000 0000 0000 0000" />
+              placeholder="0000 0000 0000 0000" maxlength="16" />
             <span class="label-wrapper__msg">Can't be empty</span>
           </div>
           <div class="date-cvc__wrapper w-100 mt-20">
@@ -60,8 +60,10 @@
               <div class="label-wrapper">
                 <label for="exp-month">EXP. DATE (MM/YY) </label>
                 <div class="input-wrapper flex w-100">
-                  <input class="w-50 mr-5" type="number" id="card-exp-month" name="expMonth" placeholder="09" />
-                  <input class="w-50 ml-5" type="number" id="card-exp-year" name="expYear" placeholder="25" />
+                  <input class="w-50 mr-5 card-exp-month" type="number" id="card-exp-month" name="expMonth"
+                    placeholder="09" />
+                  <input class="w-50 ml-5 card-exp-year" type="number" id="card-exp-year" name="expYear"
+                    placeholder="25" />
                 </div>
                 <span class="label-wrapper__msg">Can't be empty</span>
               </div>

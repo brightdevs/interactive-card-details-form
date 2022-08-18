@@ -21,7 +21,7 @@ window.onload = function () {
 
     /* Card Holder CC Number */
     if (target.classList.contains('card-holder-number')) {
-      numberPlaceHolder.innerText = target.value;
+      numberPlaceHolder.innerText = addSpace(target.value);
       //   console.log(target.value);
     }
 
@@ -29,11 +29,13 @@ window.onload = function () {
   });
 };
 
-function addSpace(number: string) {
-  if (number.length >= 16) {
-    return;
-  }
-
+/**
+ * Fuction to add space to the card number
+ *
+ * @param {string} number
+ * @return {*}
+ */
+function addSpace(number: string): string {
   let newNumber = '';
   for (let i = 0; i < number.length; i++) {
     if (i % 4 === 0 && i !== 0) {
@@ -43,6 +45,3 @@ function addSpace(number: string) {
   }
   return newNumber;
 }
-console.log(addSpace('123456789012345'));
-console.log(addSpace('123456789012345678'));
-console.log(addSpace('1234567890123456789'));
