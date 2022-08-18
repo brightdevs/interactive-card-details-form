@@ -1,1 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.icd__wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: 'Space Grotesk', sans-serif;
+  height: 100vh;
+  display: flex; }
+  .icd__wrapper__section-empty {
+    width: calc(100% / 3);
+    background-color: #21092f; }
+  .icd__wrapper__section-form {
+    width: calc(100% / 3 * 2);
+    background-color: white; }
+
+@media screen and (max-width: 375px) {
+  .icd__wrapper {
+    flex-direction: column; }
+    .icd__wrapper__section-empty {
+      width: 100%;
+      height: calc(100% / 3); }
+    .icd__wrapper__section-form {
+      width: 100%;
+      height: calc(100% / 3 * 2); } }
