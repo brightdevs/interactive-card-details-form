@@ -29,13 +29,15 @@
         <span id="number-display" class="cc-front__wrapper__number"> 1435 6789 9985 2654</span>
         <div class="cc-front__wrapper__footer">
           <span id="name-display" class="cc-front__wrapper__footer__name">Felicia Leire</span>
-          <span class="cc-front__wrapper__footer__exp-date">09/00</span>
+          <div class="cc-front__wrapper__footer__exp-date"><span id="exp-date-month"
+              class="cc-front__wrapper__footer__exp-date__month exp-date-month">09</span>/<span id="exp-date-year"
+              class="cc-front__wrapper__footer__exp-date__year exp-date-year">02</span> </div>
         </div>
       </div>
     </div>
     <div class="cc-back">
       <div class="cc-back__wrapper">
-        <span class="cc-back__wrapper__cvc">000</span>
+        <span id="cvc" class="cc-back__wrapper__cvc cvc">000</span>
       </div>
     </div>
     <div class="icd__wrapper__section-empty">
@@ -60,10 +62,10 @@
               <div class="label-wrapper">
                 <label for="exp-month">EXP. DATE (MM/YY) </label>
                 <div class="input-wrapper flex w-100">
-                  <input class="w-50 mr-5 card-exp-month" type="number" id="card-exp-month" name="expMonth"
-                    placeholder="09" />
-                  <input class="w-50 ml-5 card-exp-year" type="number" id="card-exp-year" name="expYear"
-                    placeholder="25" />
+                  <input class="w-50 mr-5 card-exp-month" type="text" id="card-exp-month" name="expMonth"
+                    placeholder="09" maxlength="2" />
+                  <input class="w-50 ml-5 card-exp-year" type="text" id="card-exp-year" name="expYear" placeholder="25"
+                    maxlength="2" />
                 </div>
                 <span class="label-wrapper__msg">Can't be empty</span>
               </div>
@@ -71,7 +73,8 @@
             <div class="cvc w-60">
               <div class="label-wrapper">
                 <label for="card-cvc">CVC</label>
-                <input class="w-100" type="number" id="card-cvc" name="card-cvc" placeholder="e.g.123" />
+                <input maxlength="3" class="w-100 card-cvc" type="text" id="card-cvc" name="card-cvc"
+                  placeholder="e.g.123" />
                 <span class="label-wrapper__msg">Can't be empty</span>
               </div>
             </div>

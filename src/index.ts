@@ -9,6 +9,14 @@ window.onload = function () {
     'number-display'
   ) as HTMLElement;
 
+  const expirationMonthPlaceHolder = document.getElementById(
+    'exp-date-month'
+  ) as HTMLElement;
+  const expirationYearPlaceHolder = document.getElementById(
+    'exp-date-year'
+  ) as HTMLElement;
+  const cvcPlaceHolder = document.getElementById('cvc') as HTMLElement;
+
   /* Event Listener for input */
   document.addEventListener('input', function (event) {
     const target = event.target as HTMLInputElement;
@@ -25,6 +33,22 @@ window.onload = function () {
       //   console.log(target.value);
     }
 
+    /* Card Holder Exp Date Month */
+    if (target.classList.contains('card-exp-month')) {
+      expirationMonthPlaceHolder.innerText = target.value;
+
+      //   console.log(target.value);
+    }
+
+    /* Card Holder Exp Date Year */
+    if (target.classList.contains('card-exp-year')) {
+      expirationYearPlaceHolder.innerText = target.value;
+      //   console.log(target.value);
+    }
+    if (target.classList.contains('card-cvc')) {
+      cvcPlaceHolder.innerText = target.value;
+      //   console.log(target.value);
+    }
     /* coment */
   });
 };
