@@ -26,9 +26,9 @@
     <div class="cc-front">
       <div class="cc-front__wrapper">
         <img class="cc-front__wrapper__img" src="./images//card-logo.svg" alt="credit card log unknown">
-        <span class="cc-front__wrapper__number"> 1435 6789 9985 2654</span>
+        <span id="number-display" class="cc-front__wrapper__number"> 1435 6789 9985 2654</span>
         <div class="cc-front__wrapper__footer">
-          <span class="cc-front__wrapper__footer__name">Felicia Leire</span>
+          <span id="name-display" class="cc-front__wrapper__footer__name">Felicia Leire</span>
           <span class="cc-front__wrapper__footer__exp-date">09/00</span>
         </div>
       </div>
@@ -45,12 +45,14 @@
         <div class="form-wrapper ">
           <div class="label-wrapper mt-20">
             <label for="card-holder-name">CARDHOLDER NAME </label>
-            <input class="w-100" type="text" id="card-holder-name" name="cardHolderNmae" placeholder="Karen Doe" />
+            <input class="w-100 card-holder-name" type="text" id="card-holder-name" name="cardHolderNmae"
+              placeholder="Karen Doe" />
             <span class="label-wrapper__msg">Can't be empty</span>
           </div>
           <div class="label-wrapper mt-20">
             <label for="card-number">CARD NUMBER </label>
-            <input class="w-100" type="text" id="card-number" name="cardNumber" placeholder="0000 0000 0000 0000" />
+            <input class="w-100 card-holder-number" type="text" id="card-holder-number" name="cardNumber"
+              placeholder="0000 0000 0000 0000" />
             <span class="label-wrapper__msg">Can't be empty</span>
           </div>
           <div class="date-cvc__wrapper w-100 mt-20">
@@ -58,8 +60,8 @@
               <div class="label-wrapper">
                 <label for="exp-month">EXP. DATE (MM/YY) </label>
                 <div class="input-wrapper flex w-100">
-                  <input class="w-50 mr-5" type="number" id="exp-month" name="expMonth" placeholder="09" />
-                  <input class="w-50 ml-5" type="number" id="exp-year" name="expYear" placeholder="25" />
+                  <input class="w-50 mr-5" type="number" id="card-exp-month" name="expMonth" placeholder="09" />
+                  <input class="w-50 ml-5" type="number" id="card-exp-year" name="expYear" placeholder="25" />
                 </div>
                 <span class="label-wrapper__msg">Can't be empty</span>
               </div>
@@ -79,6 +81,7 @@
       </form>
     </div>
   </main>
+  <script src="./public//js//index.js"></script>
 </body>
 
 </html>

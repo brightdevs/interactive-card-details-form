@@ -56,3 +56,30 @@ The designs were created to the following widths:
     Coded by <a href="#">Your Name Here</a>.
   </div>
   <script src="public/js/app.js"></script>
+
+
+
+    ```js
+  const inputCardHolderName = document.getElementById(
+    'card-holder-name'
+  ) as HTMLInputElement | null;
+
+  const inputCardHolderNumber = document.getElementById(
+    'card-holder-number'
+  ) as HTMLInputElement | null;
+
+       inputCardHolderName?.addEventListener('input', function (event) {
+      const target = event.target as HTMLInputElement;
+      console.log(target.value);
+    });
+
+
+    const input = document.getElementById('message') as HTMLInputElement | null;
+
+input?.addEventListener('input', function (event) {
+  const target = event.target as HTMLElement;
+
+  console.log(target.id);
+})
+
+    ```
