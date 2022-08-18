@@ -1,5 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 /* mixins */
+.bg-orange {
+  background-color: #ffb300; }
+
+.bg-blue {
+  background-color: #0088ff; }
+
+.w-100 {
+  width: 100%; }
+
+.w-60 {
+  width: 60%; }
+
+.w-50 {
+  width: 50%; }
+
+.w-45 {
+  width: 45%; }
+
+.w-40 {
+  width: 40%; }
+
+.mr-5 {
+  margin-right: 5px; }
+
+.ml-5 {
+  margin-left: 5px; }
+
+.flex {
+  display: flex; }
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,7 +74,6 @@
           color: #21092f;
           margin: 0 0 5px 0; }
         .icd__wrapper__section-form form .label-wrapper input {
-          width: 100%;
           height: 40px;
           border: 1px solid #dedddf;
           border-radius: 5px;
@@ -49,6 +84,8 @@
             border-width: 1px;
             border-image-slice: 1;
             border-radius: 5px !important; }
+      .icd__wrapper__section-form form .date-cvc__wrapper {
+        display: flex; }
 
 @media screen and (max-width: 375px) {
   .icd__wrapper {
