@@ -5,6 +5,7 @@ $light-grayish-violet: hsl(270, 3%, 87%);
 $dark-grayish-violet: hsl(279, 6%, 55%);
 $very-dark-violet: hsl(278, 68%, 11%);
 $liner-gradient-active-input: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+$error-red: hsl(0, 100%, 66%);
 $fw-500: 500;
 
 /* mixins */
@@ -192,7 +193,7 @@ $fw-500: 500;
 
             .label-wrapper {
                 @include flex(column, flex-start, flex-start);
-                padding: 5px 10px;
+                padding: 0px 10px 0 10px;
 
                 label {
                     font-size: 14px;
@@ -213,10 +214,13 @@ $fw-500: 500;
                         border-width: 1px;
                         border-image-slice: 1;
                         border-radius: 5px !important;
-
                     }
+                }
 
-
+                &__msg {
+                    color: $error-red;
+                    font-size: 10px;
+                    margin: 5px 0 0 10px;
                 }
             }
 
