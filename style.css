@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+/* mixins */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +17,38 @@
     background-size: cover; }
   .icd__wrapper__section-form {
     width: calc(100% / 3 * 2);
-    background-color: white; }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .icd__wrapper__section-form form {
+      width: 400px;
+      min-height: 400px;
+      background-color: white;
+      border: 1px solid #21092f;
+      border-radius: 5px; }
+      .icd__wrapper__section-form form .label-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 5px 10px; }
+        .icd__wrapper__section-form form .label-wrapper label {
+          font-size: 13px;
+          color: #21092f;
+          margin: 0 0 5px 0; }
+        .icd__wrapper__section-form form .label-wrapper input {
+          width: 100%;
+          height: 40px;
+          border: 1px solid #dedddf;
+          border-radius: 5px;
+          padding: 0 10px; }
+          .icd__wrapper__section-form form .label-wrapper input:focus {
+            outline: 1px solid #21092f;
+            border-image-source: linear-gradient(#6448fe, #600594);
+            border-width: 1px;
+            border-image-slice: 1;
+            border-radius: 5px !important; }
 
 @media screen and (max-width: 375px) {
   .icd__wrapper {
