@@ -1,0 +1,25 @@
+{
+  "name": "interactive-card-details-form",
+  "version": "1.0.0",
+  "description": "![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)",
+  "main": "public/index.js",
+  "scripts": {
+    "css": "node-sass --include-path scss style.scss style.css",
+    "watch": "nodemon -e scss -x 'npm run css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brightdevs/interactive-card-details-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brightdevs/interactive-card-details-form/issues"
+  },
+  "homepage": "https://github.com/brightdevs/interactive-card-details-form#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
