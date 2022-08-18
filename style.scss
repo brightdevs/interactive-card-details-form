@@ -25,7 +25,8 @@ $fw-500: 500;
 
     &__section-empty {
         width: calc(100% / 3);
-        background-color: $very-dark-violet;
+        background-image: url('./images/bg-main-desktop.png');
+        background-size: cover;
     }
 
     &__section-form {

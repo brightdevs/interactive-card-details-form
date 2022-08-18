@@ -12,7 +12,8 @@
   display: flex; }
   .icd__wrapper__section-empty {
     width: calc(100% / 3);
-    background-color: #21092f; }
+    background-image: url("./images/bg-main-desktop.png");
+    background-size: cover; }
   .icd__wrapper__section-form {
     width: calc(100% / 3 * 2);
     background-color: white; }
