@@ -23,24 +23,45 @@ $fw-500: 500;
     background-color: hsl(208, 100%, 50%);
 }
 
-.w-100 {
-    width: 100%;
+.w {
+    &-100 {
+        width: 100%;
+    }
+
+    &-60 {
+        width: 60%;
+    }
+
+    &-50 {
+        width: 50%;
+    }
+
+    &-40 {
+        width: 40%;
+    }
+
+    &-30 {
+        width: 30%;
+    }
+
+    &-20 {
+        width: 20%;
+    }
 }
 
-.w-60 {
-    width: 60%;
-}
 
-.w-50 {
-    width: 50%;
-}
+.mt {
+    &-5 {
+        margin-top: 5px;
+    }
 
-.w-45 {
-    width: 45%;
-}
+    &-10 {
+        margin-top: 10px;
+    }
 
-.w-40 {
-    width: 40%;
+    &-20 {
+        margin-top: 20px;
+    }
 }
 
 .mr-5 {
@@ -55,11 +76,16 @@ $fw-500: 500;
     display: flex;
 }
 
-.flex-row {
-    @include flex(row, space-between, center);
+.p_xy {
+    &-5 {
+        padding: 5px;
+    }
+
+    &-10 {
+        padding: 10px;
+    }
 }
 
-//
 
 
 * {
@@ -91,15 +117,17 @@ $fw-500: 500;
             width: 400px;
             min-height: 400px;
             background-color: white;
-            border: 1px solid $very-dark-violet;
             border-radius: 5px;
+            font-size: 18px;
+            @include flex(column, center, center);
+
 
             .label-wrapper {
                 @include flex(column, flex-start, flex-start);
                 padding: 5px 10px;
 
                 label {
-                    font-size: 13px;
+                    font-size: 14px;
                     color: $very-dark-violet;
                     margin: 0 0 5px 0;
 
@@ -127,6 +155,23 @@ $fw-500: 500;
             .date-cvc__wrapper {
                 display: flex;
                 ;
+            }
+
+            button {
+                width: 100%;
+                height: 40px;
+                border: 1px solid $very-dark-violet;
+                border-radius: 5px;
+                background-color: $very-dark-violet;
+                color: white;
+                font-size: 15px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $light-grayish-violet;
+                    color: $very-dark-violet;
+                }
             }
         }
     }

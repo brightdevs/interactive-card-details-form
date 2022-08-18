@@ -24,33 +24,37 @@
 <body>
   <main class="icd__wrapper">
     <div class="icd__wrapper__section-empty">
-      <h1>left empty section </h1>
     </div>
     <div class="icd__wrapper__section-form">
       <form action="">
-        <div class="label-wrapper">
-          <label for="card-holder-name">CARDHOLDER NAME </label>
-          <input class="w-100" type="text" id="card-holder-name" name="cardHolderNmae" placeholder="Karen Doe" />
-        </div>
-        <div class="label-wrapper">
-          <label for="card-number">CARD NUMBER </label>
-          <input class="w-100" type="text" id="card-number" name="cardNumber" placeholder="0000 0000 0000 0000" />
-        </div>
-        <div class="date-cvc__wrapper w-100">
-          <div class="exp-date w-40 ">
-            <div class="label-wrapper">
-              <label for="exp-month">EXP. DATE (MM/YY) </label>
-              <div class="input-wrapper flex w-100">
-                <input class="w-50 " type="number" id="exp-month" name="expMonth" placeholder="09" />
-                <input class="w-50" type="number" id="exp-year" name="expYear" placeholder="25" />
+        <div class="form-wrapper ">
+          <div class="label-wrapper mt-20">
+            <label for="card-holder-name">CARDHOLDER NAME </label>
+            <input class="w-100" type="text" id="card-holder-name" name="cardHolderNmae" placeholder="Karen Doe" />
+          </div>
+          <div class="label-wrapper mt-20">
+            <label for="card-number">CARD NUMBER </label>
+            <input class="w-100" type="text" id="card-number" name="cardNumber" placeholder="0000 0000 0000 0000" />
+          </div>
+          <div class="date-cvc__wrapper w-100 mt-20">
+            <div class="exp-date w-40 ">
+              <div class="label-wrapper">
+                <label for="exp-month">EXP. DATE (MM/YY) </label>
+                <div class="input-wrapper flex w-100">
+                  <input class="w-50 mr-5" type="number" id="exp-month" name="expMonth" placeholder="09" />
+                  <input class="w-50 ml-5" type="number" id="exp-year" name="expYear" placeholder="25" />
+                </div>
+              </div>
+            </div>
+            <div class="cvc w-60">
+              <div class="label-wrapper">
+                <label for="card-cvc">CVC</label>
+                <input class="w-100" type="number" id="card-cvc" name="card-cvc" placeholder="e.g.123" />
               </div>
             </div>
           </div>
-          <div class="cvc w-60">
-            <div class="label-wrapper">
-              <label for="card-cvc">CVC</label>
-              <input class="w-100" type="number" id="card-cvc" name="card-cvc" placeholder="e.g.123" />
-            </div>
+          <div class="button-wrapper p_xy-10">
+            <button class="mt-20" type="submit">Confirm</button>
           </div>
         </div>
       </form>
