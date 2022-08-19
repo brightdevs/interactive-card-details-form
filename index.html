@@ -47,9 +47,9 @@
         <div class="form-wrapper ">
           <div class="label-wrapper mt-20">
             <label for="card-holder-name">CARDHOLDER NAME </label>
-            <input class="w-100 card-holder-name" type="text" id="card-holder-name" name="cardHolderNmae"
-              placeholder="Karen Doe" />
-            <span class="label-wrapper__msg">Can't be empty</span>
+            <input id="card-holder-name" class="w-100 card-holder-name" type="text" id="card-holder-name"
+              name="cardHolderNmae" placeholder="Karen Doe" />
+            <span id="ccNameErrorMessage" class="label-wrapper__msg"></span>
           </div>
           <div class="label-wrapper mt-20">
             <label for="card-number">CARD NUMBER </label>
@@ -62,20 +62,20 @@
               <div class="label-wrapper">
                 <label for="exp-month">EXP. DATE (MM/YY) </label>
                 <div class="input-wrapper flex w-100">
-                  <input class="w-50 mr-5 card-exp-month" type="text" id="card-exp-month" name="expMonth"
-                    placeholder="09" maxlength="2" />
-                  <input class="w-50 ml-5 card-exp-year" type="text" id="card-exp-year" name="expYear" placeholder="25"
-                    maxlength="2" />
+                  <input id="card-exp-month" class="w-50 mr-5 card-exp-month" type="text" id="card-exp-month"
+                    name="expMonth" placeholder="09" maxlength="2" />
+                  <input id="card-exp-year" class="w-50 ml-5 card-exp-year" type="text" id="card-exp-year"
+                    name="expYear" placeholder="25" maxlength="2" />
                 </div>
-                <span class="label-wrapper__msg">Can't be empty</span>
+                <span id="ccExpMonthErrorMessage" class="label-wrapper__msg"></span>
               </div>
             </div>
             <div class="cvc w-60">
               <div class="label-wrapper">
                 <label for="card-cvc">CVC</label>
-                <input maxlength="3" class="w-100 card-cvc" type="text" id="card-cvc" name="card-cvc"
+                <input id="card-cvc" maxlength="3" class="w-100 card-cvc" type="text" id="card-cvc" name="card-cvc"
                   placeholder="e.g.123" />
-                <span class="label-wrapper__msg">Can't be empty</span>
+                <span class="label-wrapper__msg"></span>
               </div>
             </div>
           </div>

@@ -1,6 +1,8 @@
 // widndow on load
 window.onload = function () {
   /* Text Selectors */
+  const ccForm = document.getElementById('cc-form') as HTMLFormElement;
+
   const ccNamePlaceHolder = document.getElementById(
     'name-display'
   ) as HTMLElement;
@@ -8,17 +10,92 @@ window.onload = function () {
   const ccNumberPlaceHolder = document.getElementById(
     'number-display'
   ) as HTMLElement;
+
+  const ccNameErrorMessage = document.getElementById(
+    'ccNameErrorMessage'
+  ) as HTMLElement;
+
   const ccNumberErrorMessage = document.getElementById(
     'ccNumberErrorMessage'
   ) as HTMLElement;
+  const ccExpMonthErrorMessage = document.getElementById(
+    'ccExpMonthErrorMessage'
+  ) as HTMLElement;
+  const ccExpYearErrorMessage = document.getElementById(
+    'ccExpMonthErrorMessage'
+  ) as HTMLElement;
+
   const ccExpMonthPlaceHolder = document.getElementById(
     'exp-date-month'
   ) as HTMLElement;
+
   const ccExpYearPlaceHolder = document.getElementById(
     'exp-date-year'
   ) as HTMLElement;
+
   const cvcPlaceHolder = document.getElementById('cvc') as HTMLElement;
-  const ccNumber = document.getElementById('card-holder-number') as HTMLElement;
+
+  const ccNumber = document.getElementById(
+    'card-holder-number'
+  ) as HTMLInputElement;
+  const ccName = document.getElementById(
+    'card-holder-name'
+  ) as HTMLInputElement;
+  const ccExpMonth = document.getElementById(
+    'card-exp-month'
+  ) as HTMLInputElement;
+  const ccExpYear = document.getElementById(
+    'card-exp-year'
+  ) as HTMLInputElement;
+
+  /* submit events */
+  ccForm.addEventListener('submit', function (e) {
+    const elements = ccForm.elements;
+    if (ccNumber.value === '') {
+      ccNumberErrorMessage.innerHTML = `Can't be empty`;
+    }
+    if (ccName.value === '') {
+      ccNameErrorMessage.innerHTML = `Can't be empty`;
+    }
+    if (ccExpMonth.value === '') {
+      ccExpMonthErrorMessage.innerHTML = `Can't be empty`;
+    }
+    if (ccExpYear.value === '') {
+      ccExpYearErrorMessage.innerHTML = `Can't be empty`;
+    }
+    // //loop over elements
+    // for (let i = 0; i < elements.length; i++) {
+    //   const element = elements[i] as HTMLFormElement;
+    //   if (element.localName === 'input') {
+    //     console.log(element.value);
+
+    //     if (element.value === '') {
+    //       setText([ccNameErrorMessage, ccNumberErrorMessage], "Can't be empty");
+    //     }
+    //   }
+    // }
+    // loop through all the elements in the form and console.log them
+    // for (let i = 0; i < elements.length; i++) {
+    //   const element = elements[i].value as string
+    // }
+    // console.log(elements);
+
+    e.preventDefault();
+    // console.log('form submitted');
+    // console.log(e.target);
+
+    // const ccNumberValue = ccNumber.value;
+    // const ccNumberError = document.getElementById(
+    //     'ccNumberErrorMessage'
+    // ) as HTMLElement;
+    // if (ccNumberValue.length < 16) {
+    //     ccNumberError.style.display = 'block';
+    // } else {
+    //     ccNumberError.style.display = 'none';
+    // }
+  });
+
+  /* keyDown events */
   ccNumber.addEventListener('keydown', function (e) {
     let backSpaceKeyPRessed = false;
     const target = e.target as HTMLInputElement;
@@ -37,14 +114,16 @@ window.onload = function () {
     }
   });
 
-  /* Event Listener for input */
+  /* input events */
   document.addEventListener('input', function (event) {
     const target = event.target as HTMLInputElement;
 
     /* Card Holder Name Input */
     if (target.classList.contains('card-holder-name')) {
       ccNamePlaceHolder.innerText = target.value;
-      console.log(target.value);
+      if (target.value.length > 0) {
+        ccNameErrorMessage.innerText = '';
+      }
     }
 
     /* Card Holder CC Number */
@@ -55,26 +134,33 @@ window.onload = function () {
       } else {
         ccNumberErrorMessage.innerText = '';
       }
-      //   console.log(target.value);
     }
 
     /* Card Holder Exp Date Month */
     if (target.classList.contains('card-exp-month')) {
       ccExpMonthPlaceHolder.innerText = target.value;
-
-      //   console.log(target.value);
+      if (target.value.length > 0) {
+        ccExpMonthErrorMessage.innerText = '';
+      }
     }
 
     /* Card Holder Exp Date Year */
     if (target.classList.contains('card-exp-year')) {
       ccExpYearPlaceHolder.innerText = target.value;
-      //   console.log(target.value);
     }
     if (target.classList.contains('card-cvc')) {
       cvcPlaceHolder.innerText = target.value;
-      //   console.log(target.value);
     }
-
-    /* coment */
   });
 };
+
+// create a function that takes an array  of html elements and sets the innerText to a value then sets a timeout to set the innerText to empty
+function setText(elements: HTMLElement[], value: string) {
+  alert(elements);
+  elements.forEach((element) => {
+    element.innerText = value;
+  });
+  setTimeout(() => {
+    elements.forEach((element) => (element.innerHTML = ''));
+  }, 3000);
+}
