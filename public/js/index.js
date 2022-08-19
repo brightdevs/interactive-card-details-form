@@ -2,32 +2,54 @@
 // widndow on load
 window.onload = function () {
     /* Text Selectors */
-    const namePlaceHolder = document.getElementById('name-display');
-    const numberPlaceHolder = document.getElementById('number-display');
-    const expirationMonthPlaceHolder = document.getElementById('exp-date-month');
-    const expirationYearPlaceHolder = document.getElementById('exp-date-year');
+    const ccNamePlaceHolder = document.getElementById('name-display');
+    const ccNumberPlaceHolder = document.getElementById('number-display');
+    const ccNumberErrorMessage = document.getElementById('ccNumberErrorMessage');
+    const ccExpMonthPlaceHolder = document.getElementById('exp-date-month');
+    const ccExpYearPlaceHolder = document.getElementById('exp-date-year');
     const cvcPlaceHolder = document.getElementById('cvc');
+    const CCNUMBER = document.getElementById('card-holder-number');
+    CCNUMBER.addEventListener('keydown', function (e) {
+        let backSpaceKeyPRessed = false;
+        const target = e.target;
+        e.key === 'Backspace' ? (backSpaceKeyPRessed = true) : false;
+        if ((target.value.length === 4 ||
+            target.value.length === 9 ||
+            target.value.length === 14) &&
+            !backSpaceKeyPRessed) {
+            target.value += ' ';
+        }
+        if (e.code === 'Space') {
+            e.preventDefault();
+        }
+    });
     /* Event Listener for input */
     document.addEventListener('input', function (event) {
         const target = event.target;
         /* Card Holder Name Input */
         if (target.classList.contains('card-holder-name')) {
-            namePlaceHolder.innerText = target.value;
+            ccNamePlaceHolder.innerText = target.value;
             console.log(target.value);
         }
         /* Card Holder CC Number */
         if (target.classList.contains('card-holder-number')) {
-            numberPlaceHolder.innerText = addSpace(target.value);
+            ccNumberPlaceHolder.innerText = target.value;
+            if (!/^(?=.*\d)[\d ]+$/.test(target.value) && target.value !== '') {
+                ccNumberErrorMessage.innerText = 'Wrong format, numbers only';
+            }
+            else {
+                ccNumberErrorMessage.innerText = '';
+            }
             //   console.log(target.value);
         }
         /* Card Holder Exp Date Month */
         if (target.classList.contains('card-exp-month')) {
-            expirationMonthPlaceHolder.innerText = target.value;
+            ccExpMonthPlaceHolder.innerText = target.value;
             //   console.log(target.value);
         }
         /* Card Holder Exp Date Year */
         if (target.classList.contains('card-exp-year')) {
-            expirationYearPlaceHolder.innerText = target.value;
+            ccExpYearPlaceHolder.innerText = target.value;
             //   console.log(target.value);
         }
         if (target.classList.contains('card-cvc')) {
@@ -37,19 +59,3 @@ window.onload = function () {
         /* coment */
     });
 };
-/**
- * Fuction to add space to the card number
- *
- * @param {string} number
- * @return {*}
- */
-function addSpace(number) {
-    let newNumber = '';
-    for (let i = 0; i < number.length; i++) {
-        if (i % 4 === 0 && i !== 0) {
-            newNumber += '-';
-        }
-        newNumber += number[i];
-    }
-    return newNumber;
-}

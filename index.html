@@ -43,7 +43,7 @@
     <div class="icd__wrapper__section-empty">
     </div>
     <div class="icd__wrapper__section-form">
-      <form action="">
+      <form id="cc-form">
         <div class="form-wrapper ">
           <div class="label-wrapper mt-20">
             <label for="card-holder-name">CARDHOLDER NAME </label>
@@ -53,9 +53,9 @@
           </div>
           <div class="label-wrapper mt-20">
             <label for="card-number">CARD NUMBER </label>
-            <input autocomplete="off" class="w-100 card-holder-number" type="text" id="card-holder-number"
-              name="cardNumber" placeholder="0000 0000 0000 0000" maxlength="16" />
-            <span class="label-wrapper__msg">Can't be empty</span>
+            <input class="w-100 card-holder-number" type="text" id="card-holder-number" name="cardNumber"
+              placeholder="0000 0000 0000 0000" maxlength="19" />
+            <span id="ccNumberErrorMessage" class="label-wrapper__msg"></span>
           </div>
           <div class="date-cvc__wrapper w-100 mt-20">
             <div class="exp-date w-40 ">
@@ -80,7 +80,7 @@
             </div>
           </div>
           <div class="button-wrapper p_xy-10">
-            <button class="mt-20" type="submit">Confirm</button>
+            <button class="submit-form" class="mt-20" type="submit">Confirm</button>
           </div>
         </div>
       </form>

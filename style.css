@@ -153,9 +153,10 @@
             border-image-slice: 1;
             border-radius: 5px !important; }
         .icd__wrapper__section-form form .label-wrapper__msg {
+          margin-top: 5px;
           color: #ff5252;
           font-size: 10px;
-          margin: 5px 0 0 10px; }
+          min-height: 1rem; }
       .icd__wrapper__section-form form .date-cvc__wrapper {
         display: flex; }
       .icd__wrapper__section-form form button {
