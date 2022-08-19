@@ -3,6 +3,12 @@ window.onload = function () {
   /* Text Selectors */
   const ccForm = document.getElementById('cc-form') as HTMLFormElement;
 
+  const formWrapper = document.getElementById('form-wrapper') as HTMLElement;
+
+  const formMessageWrapper = document.getElementById(
+    'form-message-wrapper'
+  ) as HTMLElement;
+
   const ccNamePlaceHolder = document.getElementById(
     'name-display'
   ) as HTMLElement;
@@ -51,6 +57,7 @@ window.onload = function () {
     'card-exp-year'
   ) as HTMLInputElement;
   const ccCvc = document.getElementById('card-cvc') as HTMLInputElement;
+
   /* submit events */
   ccForm.addEventListener('submit', function (e) {
     [ccNumber, ccName, ccExpMonth, ccExpYear, ccCvc].forEach((element) => {
@@ -66,14 +73,16 @@ window.onload = function () {
         }
       } else {
         element.classList.remove('error');
-        const formWrapper = document.getElementById(
-          'form-wrapper'
-        ) as HTMLElement;
-        const formMessageWrapper = document.getElementById(
-          'form-message-wrapper'
-        ) as HTMLElement;
+
         formWrapper.classList.add('hide');
         formMessageWrapper.classList.remove('hide');
+        resetPlaceholders(
+          ccNamePlaceHolder,
+          ccNumberPlaceHolder,
+          ccExpMonthPlaceHolder,
+          ccExpYearPlaceHolder,
+          cvcPlaceHolder
+        );
       }
     });
 
@@ -149,3 +158,17 @@ window.onload = function () {
     }
   });
 };
+
+function resetPlaceholders(
+  ccNamePlaceHolder: HTMLElement,
+  ccNumberPlaceHolder: HTMLElement,
+  ccExpMonthPlaceHolder: HTMLElement,
+  ccExpYearPlaceHolder: HTMLElement,
+  cvcPlaceHolder: HTMLElement
+) {
+  ccNamePlaceHolder.innerHTML = 'Karen Doe';
+  ccNumberPlaceHolder.innerHTML = '0000 0000 0000 0000';
+  ccExpMonthPlaceHolder.innerHTML = 'MM';
+  ccExpYearPlaceHolder.innerHTML = 'YY';
+  cvcPlaceHolder.innerHTML = 'CVC';
+}

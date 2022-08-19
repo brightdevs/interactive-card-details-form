@@ -3,6 +3,8 @@
 window.onload = function () {
     /* Text Selectors */
     const ccForm = document.getElementById('cc-form');
+    const formWrapper = document.getElementById('form-wrapper');
+    const formMessageWrapper = document.getElementById('form-message-wrapper');
     const ccNamePlaceHolder = document.getElementById('name-display');
     const ccNumberPlaceHolder = document.getElementById('number-display');
     const ccNameErrorMessage = document.getElementById('ccNameErrorMessage');
@@ -34,10 +36,9 @@ window.onload = function () {
             }
             else {
                 element.classList.remove('error');
-                const formWrapper = document.getElementById('form-wrapper');
-                const formMessageWrapper = document.getElementById('form-message-wrapper');
                 formWrapper.classList.add('hide');
                 formMessageWrapper.classList.remove('hide');
+                resetPlaceholders(ccNamePlaceHolder, ccNumberPlaceHolder, ccExpMonthPlaceHolder, ccExpYearPlaceHolder, cvcPlaceHolder);
             }
         });
         e.preventDefault();
@@ -104,3 +105,10 @@ window.onload = function () {
         }
     });
 };
+function resetPlaceholders(ccNamePlaceHolder, ccNumberPlaceHolder, ccExpMonthPlaceHolder, ccExpYearPlaceHolder, cvcPlaceHolder) {
+    ccNamePlaceHolder.innerHTML = 'Karen Doe';
+    ccNumberPlaceHolder.innerHTML = '0000 0000 0000 0000';
+    ccExpMonthPlaceHolder.innerHTML = 'MM';
+    ccExpYearPlaceHolder.innerHTML = 'YY';
+    cvcPlaceHolder.innerHTML = 'CVC';
+}
