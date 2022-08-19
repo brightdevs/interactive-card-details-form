@@ -21,7 +21,6 @@ window.onload = function () {
     /* submit events */
     ccForm.addEventListener('submit', function (e) {
         [ccNumber, ccName, ccExpMonth, ccExpYear, ccCvc].forEach((element) => {
-            console.log(element.id);
             if (element.value === '') {
                 if (element.id === 'card-exp-month' || element.id === 'card-exp-year') {
                     ccExpMonthErrorMessage.innerHTML = 'This field is required';
@@ -35,6 +34,10 @@ window.onload = function () {
             }
             else {
                 element.classList.remove('error');
+                const formWrapper = document.getElementById('form-wrapper');
+                const formMessageWrapper = document.getElementById('form-message-wrapper');
+                formWrapper.classList.add('hide');
+                formMessageWrapper.classList.remove('hide');
             }
         });
         e.preventDefault();
@@ -101,13 +104,3 @@ window.onload = function () {
         }
     });
 };
-// create a function that takes an array  of html elements and sets the innerText to a value then sets a timeout to set the innerText to empty
-function setText(elements, value) {
-    alert(elements);
-    elements.forEach((element) => {
-        element.innerText = value;
-    });
-    setTimeout(() => {
-        elements.forEach((element) => (element.innerHTML = ''));
-    }, 3000);
-}

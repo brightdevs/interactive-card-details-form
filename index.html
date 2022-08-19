@@ -8,17 +8,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Interactive card details form</title>
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
@@ -44,7 +33,13 @@
     </div>
     <div class="icd__wrapper__section-form">
       <form id="cc-form">
-        <div class="form-wrapper ">
+        <div id="form-message-wrapper" class="form-message-wrapper hide">
+          <img src="./images/icon-complete.svg" alt="">
+          <span>Thank You!</span>
+          <p>We've added your card details</p>
+          <button class="submit-form" class="mt-20" type="submit">Continue</button>
+        </div>
+        <div id="form-wrapper" class="form-wrapper">
           <div class="label-wrapper mt-20">
             <label for="card-holder-name">CARDHOLDER NAME </label>
             <input id="card-holder-name" class="w-100 card-holder-name" type="text" id="card-holder-name"

@@ -182,13 +182,43 @@ $fw-500: 500;
         width: calc(100% / 3 * 2);
         @include flex(column, center, center);
 
+        .hide {
+            display: none !important;
+        }
+
         form {
-            width: 400px;
+            background-color: blue;
+            min-width: 380px;
+            max-width: 380px;
             min-height: 400px;
             background-color: white;
             border-radius: 5px;
             font-size: 18px;
             @include flex(column, center, center);
+
+            .form-message-wrapper {
+
+                min-height: 200px;
+                width: 100%;
+                @include flex(column, center, center);
+
+                *:nth-child(n + 1) {
+                    margin: 10px 5px;
+                }
+
+                img {
+                    max-width: 80px;
+
+                }
+
+                span {
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-align: center;
+                    // all caps
+                    text-transform: uppercase;
+                }
+            }
 
 
             .label-wrapper {
