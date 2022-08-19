@@ -18,8 +18,8 @@ window.onload = function () {
     'exp-date-year'
   ) as HTMLElement;
   const cvcPlaceHolder = document.getElementById('cvc') as HTMLElement;
-  const CCNUMBER = document.getElementById('card-holder-number') as HTMLElement;
-  CCNUMBER.addEventListener('keydown', function (e) {
+  const ccNumber = document.getElementById('card-holder-number') as HTMLElement;
+  ccNumber.addEventListener('keydown', function (e) {
     let backSpaceKeyPRessed = false;
     const target = e.target as HTMLInputElement;
     e.key === 'Backspace' ? (backSpaceKeyPRessed = true) : false;

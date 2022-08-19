@@ -8,8 +8,8 @@ window.onload = function () {
     const ccExpMonthPlaceHolder = document.getElementById('exp-date-month');
     const ccExpYearPlaceHolder = document.getElementById('exp-date-year');
     const cvcPlaceHolder = document.getElementById('cvc');
-    const CCNUMBER = document.getElementById('card-holder-number');
-    CCNUMBER.addEventListener('keydown', function (e) {
+    const ccNumber = document.getElementById('card-holder-number');
+    ccNumber.addEventListener('keydown', function (e) {
         let backSpaceKeyPRessed = false;
         const target = e.target;
         e.key === 'Backspace' ? (backSpaceKeyPRessed = true) : false;
