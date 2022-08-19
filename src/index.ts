@@ -63,13 +63,13 @@ window.onload = function () {
     [ccNumber, ccName, ccExpMonth, ccExpYear, ccCvc].forEach((element) => {
       if (element.value === '') {
         if (element.id === 'card-exp-month' || element.id === 'card-exp-year') {
-          ccExpMonthErrorMessage.innerHTML = 'This field is required';
+          ccExpMonthErrorMessage.innerHTML = "Can't be blank";
         }
         e.preventDefault();
         element.classList.add('error');
         const target = element.nextElementSibling as HTMLElement;
         if (target) {
-          target.innerHTML = 'This field is required';
+          target.innerHTML = "Can't be blank";
         }
       } else {
         element.classList.remove('error');
