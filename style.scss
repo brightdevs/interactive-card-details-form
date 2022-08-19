@@ -223,6 +223,11 @@ $fw-500: 500;
                     font-size: 10px;
                     min-height: 1rem;
                 }
+
+                .error {
+                    //set the input border to red
+                    border: 1px solid $error-red;
+                }
             }
 
             .date-cvc__wrapper {

@@ -10,26 +10,36 @@ window.onload = function () {
     const ccExpMonthErrorMessage = document.getElementById('ccExpMonthErrorMessage');
     const ccExpYearErrorMessage = document.getElementById('ccExpMonthErrorMessage');
     const ccExpMonthPlaceHolder = document.getElementById('exp-date-month');
+    const cardCvcErrorMessage = document.getElementById('cardCvcErrorMessage');
     const ccExpYearPlaceHolder = document.getElementById('exp-date-year');
     const cvcPlaceHolder = document.getElementById('cvc');
     const ccNumber = document.getElementById('card-holder-number');
     const ccName = document.getElementById('card-holder-name');
     const ccExpMonth = document.getElementById('card-exp-month');
     const ccExpYear = document.getElementById('card-exp-year');
+    const ccCvc = document.getElementById('card-cvc');
     /* submit events */
     ccForm.addEventListener('submit', function (e) {
         const elements = ccForm.elements;
         if (ccNumber.value === '') {
-            ccNumberErrorMessage.innerHTML = `Can't be empty`;
+            ccNumber.classList.add('error');
+            ccNumberErrorMessage.innerHTML = `Can't be blank`;
         }
         if (ccName.value === '') {
-            ccNameErrorMessage.innerHTML = `Can't be empty`;
+            ccName.classList.add('error');
+            ccNameErrorMessage.innerHTML = `Can't be blank`;
         }
         if (ccExpMonth.value === '') {
-            ccExpMonthErrorMessage.innerHTML = `Can't be empty`;
+            ccExpMonth.classList.add('error');
+            ccExpMonthErrorMessage.innerHTML = `Can't be blank`;
         }
         if (ccExpYear.value === '') {
-            ccExpYearErrorMessage.innerHTML = `Can't be empty`;
+            ccExpYear.classList.add('error');
+            ccExpYearErrorMessage.innerHTML = `Can't be blank`;
+        }
+        if (ccCvc.value === '') {
+            ccCvc.classList.add('error');
+            cardCvcErrorMessage.innerHTML = `Can't be blank`;
         }
         // //loop over elements
         // for (let i = 0; i < elements.length; i++) {
@@ -81,6 +91,7 @@ window.onload = function () {
         if (target.classList.contains('card-holder-name')) {
             ccNamePlaceHolder.innerText = target.value;
             if (target.value.length > 0) {
+                ccName.classList.remove('error');
                 ccNameErrorMessage.innerText = '';
             }
         }
@@ -91,6 +102,7 @@ window.onload = function () {
                 ccNumberErrorMessage.innerText = 'Wrong format, numbers only';
             }
             else {
+                target.classList.remove('error');
                 ccNumberErrorMessage.innerText = '';
             }
         }
@@ -98,15 +110,24 @@ window.onload = function () {
         if (target.classList.contains('card-exp-month')) {
             ccExpMonthPlaceHolder.innerText = target.value;
             if (target.value.length > 0) {
+                target.classList.remove('error');
                 ccExpMonthErrorMessage.innerText = '';
             }
         }
         /* Card Holder Exp Date Year */
         if (target.classList.contains('card-exp-year')) {
             ccExpYearPlaceHolder.innerText = target.value;
+            if (target.value.length > 0) {
+                target.classList.remove('error');
+                ccExpYearErrorMessage.innerText = '';
+            }
         }
         if (target.classList.contains('card-cvc')) {
             cvcPlaceHolder.innerText = target.value;
+            if (target.value.length > 0) {
+                target.classList.remove('error');
+                cardCvcErrorMessage.innerText = '';
+            }
         }
     });
 };

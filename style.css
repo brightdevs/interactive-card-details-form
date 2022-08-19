@@ -157,6 +157,8 @@
           color: #ff5252;
           font-size: 10px;
           min-height: 1rem; }
+        .icd__wrapper__section-form form .label-wrapper .error {
+          border: 1px solid #ff5252; }
       .icd__wrapper__section-form form .date-cvc__wrapper {
         display: flex; }
       .icd__wrapper__section-form form button {
