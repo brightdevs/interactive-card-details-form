@@ -20,54 +20,24 @@ window.onload = function () {
     const ccCvc = document.getElementById('card-cvc');
     /* submit events */
     ccForm.addEventListener('submit', function (e) {
-        const elements = ccForm.elements;
-        if (ccNumber.value === '') {
-            ccNumber.classList.add('error');
-            ccNumberErrorMessage.innerHTML = `Can't be blank`;
-        }
-        if (ccName.value === '') {
-            ccName.classList.add('error');
-            ccNameErrorMessage.innerHTML = `Can't be blank`;
-        }
-        if (ccExpMonth.value === '') {
-            ccExpMonth.classList.add('error');
-            ccExpMonthErrorMessage.innerHTML = `Can't be blank`;
-        }
-        if (ccExpYear.value === '') {
-            ccExpYear.classList.add('error');
-            ccExpYearErrorMessage.innerHTML = `Can't be blank`;
-        }
-        if (ccCvc.value === '') {
-            ccCvc.classList.add('error');
-            cardCvcErrorMessage.innerHTML = `Can't be blank`;
-        }
-        // //loop over elements
-        // for (let i = 0; i < elements.length; i++) {
-        //   const element = elements[i] as HTMLFormElement;
-        //   if (element.localName === 'input') {
-        //     console.log(element.value);
-        //     if (element.value === '') {
-        //       setText([ccNameErrorMessage, ccNumberErrorMessage], "Can't be empty");
-        //     }
-        //   }
-        // }
-        // loop through all the elements in the form and console.log them
-        // for (let i = 0; i < elements.length; i++) {
-        //   const element = elements[i].value as string
-        // }
-        // console.log(elements);
+        [ccNumber, ccName, ccExpMonth, ccExpYear, ccCvc].forEach((element) => {
+            console.log(element.id);
+            if (element.value === '') {
+                if (element.id === 'card-exp-month' || element.id === 'card-exp-year') {
+                    ccExpMonthErrorMessage.innerHTML = 'This field is required';
+                }
+                e.preventDefault();
+                element.classList.add('error');
+                const target = element.nextElementSibling;
+                if (target) {
+                    target.innerHTML = 'This field is required';
+                }
+            }
+            else {
+                element.classList.remove('error');
+            }
+        });
         e.preventDefault();
-        // console.log('form submitted');
-        // console.log(e.target);
-        // const ccNumberValue = ccNumber.value;
-        // const ccNumberError = document.getElementById(
-        //     'ccNumberErrorMessage'
-        // ) as HTMLElement;
-        // if (ccNumberValue.length < 16) {
-        //     ccNumberError.style.display = 'block';
-        // } else {
-        //     ccNumberError.style.display = 'none';
-        // }
     });
     /* keyDown events */
     ccNumber.addEventListener('keydown', function (e) {
