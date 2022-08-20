@@ -165,7 +165,8 @@
           height: 40px;
           border: 1px solid #dedddf;
           border-radius: 5px;
-          padding: 0 10px; }
+          padding: 0 10px;
+          font-size: 18px; }
           .icd__wrapper__section-form form .label-wrapper input:focus {
             outline: 1px solid #21092f;
             border-image-source: linear-gradient(#6448fe, #600594);
