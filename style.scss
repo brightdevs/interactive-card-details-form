@@ -244,6 +244,11 @@ $fw-500: 500;
                         border-width: 1px;
                         border-image-slice: 1;
                         border-radius: 5px !important;
+
+                        &.error {
+                            outline: 1px solid $error-red  !important;
+                        }
+
                     }
                 }
 

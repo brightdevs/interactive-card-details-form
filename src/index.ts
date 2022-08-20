@@ -130,40 +130,43 @@ window.onload = function () {
     /* Card Holder CC Number */
     if (target.classList.contains('card-holder-number')) {
       ccNumberPlaceHolder.innerText = target.value;
-      if (!/^(?=.*\d)[\d ]+$/.test(target.value) && target.value !== '') {
-        ccNumberErrorMessage.innerText = 'Wrong format, numbers only';
-      } else {
-        target.classList.remove('error');
-        ccNumberErrorMessage.innerText = '';
-      }
+      errorMessage(target, ccNumberErrorMessage);
     }
 
     /* Card Holder Exp Date Month */
     if (target.classList.contains('card-exp-month')) {
       ccExpMonthPlaceHolder.innerText = target.value;
-      if (target.value.length > 0) {
-        target.classList.remove('error');
-        ccExpMonthErrorMessage.innerText = '';
-      }
+      errorMessage(target, ccExpMonthErrorMessage);
     }
 
     /* Card Holder Exp Date Year */
     if (target.classList.contains('card-exp-year')) {
       ccExpYearPlaceHolder.innerText = target.value;
-      if (target.value.length > 0) {
-        target.classList.remove('error');
-        ccExpYearErrorMessage.innerText = '';
-      }
+      errorMessage(target, ccExpYearErrorMessage);
     }
     if (target.classList.contains('card-cvc')) {
       cvcPlaceHolder.innerText = target.value;
-      if (target.value.length > 0) {
-        target.classList.remove('error');
-        cardCvcErrorMessage.innerText = '';
-      }
+      errorMessage(target, cardCvcErrorMessage);
     }
   });
 };
+
+function errorMessage(
+  target: HTMLInputElement,
+  cardCvcErrorMessage: HTMLElement
+) {
+  if (!numbersOnly(target) && target.value !== '') {
+    cardCvcErrorMessage.innerText = 'Wrong format, numbers only';
+    target.classList.add('error');
+  } else {
+    target.classList.remove('error');
+    cardCvcErrorMessage.innerText = '';
+  }
+}
+
+function numbersOnly(target: HTMLInputElement) {
+  return /^(?=.*\d)[\d ]+$/.test(target.value);
+}
 
 function resetPlaceholders(
   ccNamePlaceHolder: HTMLElement,

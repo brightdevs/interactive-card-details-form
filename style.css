@@ -172,6 +172,8 @@
             border-width: 1px;
             border-image-slice: 1;
             border-radius: 5px !important; }
+            .icd__wrapper__section-form form .label-wrapper input:focus.error {
+              outline: 1px solid #ff5252 !important; }
         .icd__wrapper__section-form form .label-wrapper__msg {
           margin-top: 5px;
           color: #ff5252;
