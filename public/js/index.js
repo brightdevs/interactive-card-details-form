@@ -112,9 +112,9 @@ window.onload = function () {
     });
 };
 function resetPlaceholders(ccNamePlaceHolder, ccNumberPlaceHolder, ccExpMonthPlaceHolder, ccExpYearPlaceHolder, cvcPlaceHolder) {
-    ccNamePlaceHolder.innerHTML = 'Karen Doe';
+    ccNamePlaceHolder.innerHTML = 'Jane Appleseed';
     ccNumberPlaceHolder.innerHTML = '0000 0000 0000 0000';
-    ccExpMonthPlaceHolder.innerHTML = 'MM';
-    ccExpYearPlaceHolder.innerHTML = 'YY';
-    cvcPlaceHolder.innerHTML = 'CVC';
+    ccExpMonthPlaceHolder.innerHTML = '00';
+    ccExpYearPlaceHolder.innerHTML = '00';
+    cvcPlaceHolder.innerHTML = '000';
 }
