@@ -321,7 +321,7 @@ $fw-500: 500;
         }
 
         .cc-front {
-            top: 17%;
+            top: 8rem;
             left: 5%;
             padding: 13px;
 
@@ -344,13 +344,13 @@ $fw-500: 500;
 
         .cc-back {
             z-index: 4;
-            top: 5%;
+            top: 2.4rem;
             left: 16%;
 
             &__wrapper {
                 &__cvc {
-                    margin: 0 5px 1px 0;
-                    font-size: 10px;
+                    margin-bottom: 5px;
+                    font-size: 12px;
                 }
             }
         }
