@@ -22,8 +22,11 @@ window.onload = function () {
     const ccCvc = document.getElementById('card-cvc');
     /* submit events */
     ccForm.addEventListener('submit', function (e) {
+        const nonFilledInputs = [];
         [ccNumber, ccName, ccExpMonth, ccExpYear, ccCvc].forEach((element) => {
-            if (element.value === '') {
+            // check all input fields are filled
+            if (!element.value) {
+                nonFilledInputs.push(element);
                 if (element.id === 'card-exp-month' || element.id === 'card-exp-year') {
                     ccExpMonthErrorMessage.innerHTML = "Can't be blank";
                 }
@@ -33,14 +36,17 @@ window.onload = function () {
                 if (target) {
                     target.innerHTML = "Can't be blank";
                 }
+                return;
             }
             else {
                 element.classList.remove('error');
-                formWrapper.classList.add('hide');
-                formMessageWrapper.classList.remove('hide');
-                resetPlaceholders(ccNamePlaceHolder, ccNumberPlaceHolder, ccExpMonthPlaceHolder, ccExpYearPlaceHolder, cvcPlaceHolder);
             }
         });
+        if (!nonFilledInputs.length) {
+            formWrapper.classList.add('hide');
+            formMessageWrapper.classList.remove('hide');
+            resetPlaceholders(ccNamePlaceHolder, ccNumberPlaceHolder, ccExpMonthPlaceHolder, ccExpYearPlaceHolder, cvcPlaceHolder);
+        }
         e.preventDefault();
     });
     /* keyDown events */
